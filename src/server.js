@@ -3,6 +3,7 @@ import cors from 'cors';
 import passport from 'passport';
 import bodyParser from 'body-parser';
 import './config/loadEnv';
+import morgan from 'morgan';
 import { rateLimitMiddleware } from './middleware';
 import addRoutes from './routes';
 import initializePassport from './config/passport';
@@ -11,6 +12,9 @@ import { handleError } from './utils/errorHandler';
 
 const generateApp = () => {
   const app = express();
+
+  // setup request logger
+  app.use(morgan('combined'));
 
   // setup corse
   app.use(cors());

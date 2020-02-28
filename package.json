@@ -6,8 +6,7 @@
     "start": " NODE_ENV=development nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
     "serve": "node dist/index.js",
-    "test": "NODE_ENV=test jest --config testing/jest.config.js",
-    "test:watch": " NODE_ENV=test jest --watch --config testing/jest.config.js"
+    "test": "NODE_ENV=test jest"
   },
   "dependencies": {
     "@babel/cli": "^7.6.4",
@@ -42,11 +41,22 @@
     "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^23.7.0",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
+    "lint-staged": "^10.0.8",
     "nodemon": "^1.19.4",
     "regenerator-runtime": "^0.13.3",
     "supertest": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }

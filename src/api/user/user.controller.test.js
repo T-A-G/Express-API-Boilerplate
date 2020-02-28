@@ -115,7 +115,7 @@ describe('user.controller', () => {
       expect(expiredRes.statusCode).toEqual(401);
       expect(expiredRes.body.message).toEqual('Unauthorized');
     });
-    test('returns 200 for valid lookup', async () => {
+    test('returns 200 for successful user retrieval', async () => {
       // create new user
       const user = await User.create(
         {

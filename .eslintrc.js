@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    "prettier"
   ],
   globals: {
     Atomics: 'readonly',
@@ -20,13 +21,10 @@ module.exports = {
     "no-console": "off",
     "no-unused-vars": "warn",
     "import/prefer-default-export": "off",
-    "import/no-dynamic-require" : "warn",
     "no-underscore-dangle" : "off",
-
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error"
   },
 };

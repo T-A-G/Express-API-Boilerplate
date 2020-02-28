@@ -1,0 +1,52 @@
+{
+  "name": "express-api-promise-boilerplate",
+  "description": "A boilerplate application for promise based express API server with MongoDB and passport JWT authentication.",
+  "version": "1.0.0",
+  "scripts": {
+    "start": " NODE_ENV=development nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/index.js",
+    "test": "NODE_ENV=test jest --config testing/jest.config.js",
+    "test:watch": " NODE_ENV=test jest --watch --config testing/jest.config.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-transform-async-to-generator": "^7.5.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@google-cloud/storage": "^4.0.0",
+    "bcrypt": "^3.0.8",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.0.0",
+    "firebase": "^7.8.0",
+    "firebase-admin": "^8.9.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongodb-memory-server": "^6.2.4",
+    "mongoose": "^5.7.12",
+    "morgan": "^1.9.1",
+    "ora": "^4.0.3",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.7.0",
+    "jest": "^25.1.0",
+    "nodemon": "^1.19.4",
+    "regenerator-runtime": "^0.13.3",
+    "supertest": "^4.0.2"
+  }
+}

@@ -14,7 +14,9 @@ const generateApp = () => {
   const app = express();
 
   // setup request logger
+  if (process.env.NODE_ENV !== 'test') {
   app.use(morgan('combined'));
+  }
 
   // setup corse
   app.use(cors());

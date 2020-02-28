@@ -131,7 +131,7 @@ describe('user.controller', () => {
         .get('/api/user/')
         .set('Authorization', `jwt ${expiredUserToken}`)
         .send();
-      expect(res.statusCode).toEqual(202);
+                                                                            expect(res.statusCode).toEqual(200);
 
       // verify correct user info
       expect(res.body.user.email).toEqual(user.email);

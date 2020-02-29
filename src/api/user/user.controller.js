@@ -14,7 +14,6 @@ export async function index(req, res, next) {
   }
 }
 
-
 /**
 * function which returns information of current user and generated JWT token
 * after user successfully logged in.

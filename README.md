@@ -1,6 +1,6 @@
 # Express Api Boilerplate
 
-Simple express biolderplate for creating REST API server using MongoDB.
+Simple express boilerplate for creating REST API server using MongoDB.
 
 ## Features
 

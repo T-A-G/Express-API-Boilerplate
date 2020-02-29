@@ -3,7 +3,10 @@ import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import User from '../api/user/user.model';
 import { ErrorHandler } from '../utils/errorHandler';
 
-
+/**
+* Function that initializes passport.js functionality.
+* @param {object} passport passport middleware instance
+*/
 const initializePassport = (passport) => {
   // login user
   passport.use(
@@ -46,7 +49,7 @@ const initializePassport = (passport) => {
     ),
   );
 
-  // handle JWT
+  // handle JWT verification
   passport.use(
     'jwt',
     new JwtStrategy(

@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 import generateApp from './server';
 
+/**
+* Function to start an express app
+*/
 const startApp = () => {
   // generate app
   const app = generateApp();

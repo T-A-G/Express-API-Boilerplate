@@ -1,6 +1,6 @@
 import rateLimit from 'express-rate-limit';
 
-// rate limit middleware
+// rate limit middleware. Used for stop brute force attacks
 const rateLimitInMs = process.env.RATE_LIMIT_WINDOW || 1 * 60 * 1000;
 export const rateLimitMiddleware = rateLimit({
   windowMs: rateLimitInMs,

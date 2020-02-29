@@ -9,7 +9,10 @@ import addRoutes from './routes';
 import initializePassport from './config/passport';
 import { handleError } from './utils/errorHandler';
 
-
+/**
+* Factory function that returns an express application with
+* @returns {Express Application} express application
+*/
 const generateApp = () => {
   const app = express();
 
@@ -44,4 +47,5 @@ const generateApp = () => {
 
   return app;
 };
+
 export default generateApp;

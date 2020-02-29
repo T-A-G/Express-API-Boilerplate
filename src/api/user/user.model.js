@@ -15,6 +15,10 @@ const UserSchema = new Schema({
   },
 });
 
+
+/**
+* user method to encrypt the a user's passpord before storing it to DB.
+*/
 UserSchema.pre('save', async function hashPassword(next) {
   try {
     // only hash the password if it has been modified (or is new)
@@ -34,16 +38,27 @@ UserSchema.pre('save', async function hashPassword(next) {
   }
 });
 
+/**
+* user method to validate user password
+*/
 UserSchema.methods.validatePassword = async function validatePassword(password) {
   return bcrypt.compare(password, this.password);
 };
 
+
+/**
+* user method to generate jwt token containing user information.
+*/
 UserSchema.methods.toJwtToken = function toJwtToken() {
   const { email } = this;
   const userToken = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: `${process.env.JWT_TOKEN_EXPIRATION_IN_DAYS}d` });
   return userToken;
 };
 
+
+/**
+* user method to convert user information to JSON convertable format and exclude .
+*/
 UserSchema.methods.toJSON = function toJSON() {
   const { email } = this;
   return { email };

@@ -1,5 +1,8 @@
-/*
-* Error handler
+/**
+* Function that takes errors thrown in the application and converts
+* them to a valid json response with a status code.
+* @param {Error} error
+* @param {object} res express applicatin response object
 */
 export const handleError = (error, res) => {
   const status = error.status || 500;
@@ -11,7 +14,7 @@ export const handleError = (error, res) => {
 };
 
 /*
-* custom Error extension to add statuscodes
+* custom Error extension to add statuscodes. 
 */
 export class ErrorHandler extends Error {
   constructor(message, status = 500) {

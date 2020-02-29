@@ -16,6 +16,21 @@ export async function index(req, res, next) {
 
 /**
 * function which returns information of current user and generated JWT token
+* after user successfully registering.
+*/
+export async function register(req, res, next) {
+  try {
+    const { jwtToken } = req;
+    const user = pick(req.user,['email'])
+    sendResponse(res, 200, { jwtToken, user });
+  } catch (e) {
+    const uploadError = new ErrorHandler('An unexpected error occured when trying to register.');
+    next(uploadError);
+  }
+}
+
+/**
+* function which returns information of current user and generated JWT token
 * after user successfully logged in.
 */
 export async function login(req, res, next) {

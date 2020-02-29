@@ -10,6 +10,40 @@ import { ErrorHandler } from '../utils/errorHandler';
 const initializePassport = (passport) => {
   // login user
   passport.use(
+    'register',
+    new LocalStrategy(
+      {
+        usernameField: 'email',
+        passwordField: 'password',
+        session: false,
+        passReqToCallback: true,
+      },
+      async (req, email, password, done) => {
+        try {
+          const userExists = await User.exists({ email });
+
+          // user can't be found with given email
+          if (userExists) {
+            const emailAlreadyTakenError = new ErrorHandler('Email address already taken.', 401);
+            return done(emailAlreadyTakenError, false);
+          }
+
+          const user = await User.create({email, password});
+
+          // user is correctly authenticated
+          const jwtToken = user.toJwtToken();
+          req.jwtToken = jwtToken;
+
+
+          return done(null, user);
+        } catch (error) {
+          return done(error);
+        }
+      },
+    ),
+  );
+  // login user
+  passport.use(
     'login',
     new LocalStrategy(
       {

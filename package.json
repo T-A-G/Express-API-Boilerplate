@@ -6,7 +6,8 @@
     "start": " NODE_ENV=development nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
     "serve": "node dist/index.js",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest --watch"
   },
   "dependencies": {
     "@babel/cli": "^7.6.4",

@@ -4,7 +4,7 @@ Simple express boilerplate for creating REST API server using MongoDB.
 
 ## Features
 
-1. Authentication with email/password and JWT authentication using [passport.js](http://www.passportjs.org/)(withoutt blacklisting).
+1. Authentication with email/password and JWT authentication using [passport.js](http://www.passportjs.org/)(without blacklisting).
 2. API rate limiting using [express-rate-limit](https://www.npmjs.com/package/express-rate-limit).
 3. Test integration using [Jest](https://jestjs.io/) and [Supertest](https://www.npmjs.com/package/supertest).
 4. Logging using [morgan](https://www.npmjs.com/package/morgan).

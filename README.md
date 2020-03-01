@@ -16,7 +16,7 @@ Simple express boilerplate for creating REST API server.
 ## ⚙️ Environment variables
 
 | Variable Name.                 | description                          | example                                  |
-| ------------------------------ |:------------------------------------:| :---------------------------------------:|
+| ------------------------------ |:-------------------------------------| :---------------------------------------:|
 | `JWT_SECRET`                   | secret for generating JWT            | `Q>,L+A+6`                               |
 | `MONGO_DB`                     | MongoDB connection uri string        | `mongodb://localhost:27017/Biolerplate`  |
 | `JWT_TOKEN_EXPIRATION_IN_DAYS` | period after which JWT should expire | `7`                                      |

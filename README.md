@@ -11,7 +11,7 @@ Simple express boilerplate for creating REST API server.
 5. Error handling([here](https://expressjs.com/en/guide/error-handling.html)).
 6. ODM using [Mongoose.js](https://mongoosejs.com/).
 7. Precommit code formatting using [prettier](https://prettier.io/) and testing using [husky](https://www.npmjs.com/package/husky/v/3.0.0).
-8. Compiling using [babel.js](https://babeljs.io/).
+8. ES6 support with [babel.js](https://babeljs.io/).
 
 ## ⚙️ Environment variables
 
